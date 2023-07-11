@@ -1,0 +1,78 @@
+<!--publications.html-->
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- bootstrap container -->
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col text-center">
+                <h1>Publications</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="pub-accordion">
+                    {% for pub in publications %}
+                        <div class="card">
+                            <div class="card-header" id="heading-{{ loop.index }}" style="cursor: pointer;" data-toggle="collapse" data-target="#collapse-{{ loop.index }}" aria-expanded="true" aria-controls="collapse-{{ loop.index }}">
+                                <b>{{ pub.title }}</b>
+                                <br />
+                                {{ pub.venue }}
+                                <br />
+                                <em>
+                                    {% for author in pub.authors %}
+                                        {{ author }}{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </em>
+                            </div>
+
+                            <div id="collapse-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" aria-labelledby="heading-{{ loop.index }}" data-parent="#pub-accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h3>Abstract</h3>
+                                            <p>{{ pub.abstract }}</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h3>Links</h3>
+                                            {% if pub.links.pdf %}
+                                                <a href="{{ pub.links.pdf }}" target="_blank" class="nav-link link-icon">
+                                                    <i class="fa-solid fa-lg fa-file-pdf"></i>
+                                                </a>
+                                            {% endif %}
+                                            {% if pub.links.github %}
+                                                <a href="{{ pub.links.github }}" target="_blank" class="nav-link link-icon">
+                                                    <i class="fab fa-lg fa-github"></i>
+                                                </a>
+                                            {% endif %}
+                                            {% if pub.links.youtube %}
+                                                <a href="{{ pub.links.youtube }}" target="_blank" class="nav-link link-icon">
+                                                    <i class="fab fa-lg fa-youtube"></i>
+                                                </a>
+                                            {% endif %}
+                                            {% if pub.links.linkedin %}
+                                                <a href="{{ pub.links.linkedin }}" target="_blank" class="nav-link link-icon">
+                                                    <i class="fab fa-lg fa-linkedin"></i>
+                                                </a>
+                                            {% endif %}
+                                            <h3 class="mt-2">Authors</h3>
+                                            {% for author in pub.authors %}
+                                                <!-- if author in websites -->
+                                                {% if author in websites %}
+                                                    <a href="{{ websites[author] }}" target="_blank">{{ author }}</a>
+                                                {% else %}
+                                                    {{ author }}
+                                                {% endif %}
+                                                <br />
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

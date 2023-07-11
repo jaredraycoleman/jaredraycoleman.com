@@ -1,0 +1,53 @@
+<!--publications.html-->
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- bootstrap container -->
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col text-center">
+                <h1>Projects</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="list-group" id="pub-list">
+                    {% for project in projects %}
+                    <li class="list-group-item">
+                        <div class="row mt-2">
+                            <div class="col-md-2 text-center">
+                                <h3>{{ project.name }}</h3>
+                                {% if project.links.pdf %}
+                                    <a href="{{ project.links.pdf }}" target="_blank" class="nav-link link-icon">
+                                        <i class="fa-solid fa-lg fa-file-pdf"></i>
+                                    </a>
+                                {% endif %}
+                                {% if project.links.github %}
+                                    <a href="{{ project.links.github }}" target="_blank" class="nav-link link-icon">
+                                        <i class="fab fa-lg fa-github"></i>
+                                    </a>
+                                {% endif %}
+                                {% if project.links.youtube %}
+                                    <a href="{{ project.links.youtube }}" target="_blank" class="nav-link link-icon">
+                                        <i class="fab fa-lg fa-youtube"></i>
+                                    </a>
+                                {% endif %}
+                                {% if project.links.linkedin %}
+                                    <!-- <a href="{{ project.linkedin }}" target="_blank">LinkedIn</a> -->
+                                    <a href="{{ project.links.linkedin }}" target="_blank" class="nav-link link-icon">
+                                        <i class="fab fa-lg fa-linkedin"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-10">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description | safe }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

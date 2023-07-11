@@ -1,0 +1,20 @@
+/* on small viewports make profile image small */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 50vw;
+  }
+}
+
+.main-content {
+  margin-bottom: 70px; /* Adjust this to match your navbar height */
+}
+
+.social-media-icons {
+  display: flex;
+}
+
+.link-icon {
+  display: inline-block;
+  color: #000000;
+  padding: 5px;
+}

@@ -1,0 +1,26 @@
+<!--index.html-->
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- bootstrap container -->
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-md-4 text-center">
+                <img src="{{ url_for('static', filename='img/profile.png') }}" alt="Profile Picture" class="img-fluid profile-img">
+            </div>
+            <div class="col-md-8 mt-2">
+                <h1>Jared Coleman</h1>
+                <p>
+                    I am a Ph.D. student at University of Southern California advised by Bhaskar Krishnamachari. 
+                    I have Master's and Bachelor's degrees in Computer Science from California State University, Long Beach. 
+                    I am also a Member of the Technical Staff at the Federally Funded Research and Development Center, Aerospace Corporation.
+                </p>
+                <h2>Research Interests</h2>
+                <p>
+                    I have a broad interest in computer science and mathematics. 
+                    In particular, my research interests include distributed computing, competitive/cooperative mobile robotics systems, and the internet of things.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
