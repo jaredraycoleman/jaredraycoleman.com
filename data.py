@@ -225,7 +225,7 @@ projects = [
             'github': 'https://github.com/ANRGUSC/tendermint_demo',
         },
         "description": (
-            "<p>This is a short introductory tutorial on Tendermint consisting of a two-part video series and code to get started. Part 1 is a brief introduction to blockchain, Tendermint consensus, and the ABCI (Application Blockchain Interface). Part 2 is a tutorial demo which viewers can run themselves and follow along. No installation required - just click the 'Open with GitPod' in the <a href='"
+            "<p>This is a short introductory tutorial on Tendermint consisting of a two-part video series and code to get started. Part 1 is a brief introduction to blockchain, Tendermint consensus, and the ABCI (Application Blockchain Interface). Part 2 is a tutorial demo which viewers can run themselves and follow along. No installation required - just click the 'Open with GitPod' in the <a href=\"https://github.com/ANRGUSC/tendermint_demo\">GitHub Repo</a>!"
         )
     },
     {
@@ -236,8 +236,6 @@ projects = [
             'twitter': 'https://twitter.com/ovkubishi',
             'github': 'https://github.com/kubishi/kubishi',
         },
-        "description": (
-            "<p><em>Kubishi</em> is an online dictionary and encyclopedia for Owens Valley Paiute language and culture. The Owens Valley Paiute language is <a href='http://www.endangeredlanguages.com/lang/4692'>critically endangered</a>. <em>Kubishi</em> is one resource in the <a href='http://www.ovcdc.com/blog/language/'>fight</a> (led by Tribes of the Owens Valley) to reverse the damage inflicted by generations of forced assimilation and colonialism. The goal of this project is to help promote and preserve Owens Valley Paiute language and culture, but also to provide an open-source toolset for other tribal nations to do the same.</p>"
-        )
+        "description": "<p><em>Kubishi</em> is an online dictionary and encyclopedia for Owens Valley Paiute language and culture. The Owens Valley Paiute language is <a href='http://www.endangeredlanguages.com/lang/4692'>critically endangered</a>. <em>Kubishi</em> is one resource in the <a href='http://www.ovcdc.com/blog/language/'>fight</a> (led by Tribes of the Owens Valley) to reverse the damage inflicted by generations of forced assimilation and colonialism. The goal of this project is to help promote and preserve Owens Valley Paiute language and culture, but also to provide an open-source toolset for other tribal nations to do the same.</p>"
     }
 ]
