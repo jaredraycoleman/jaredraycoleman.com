@@ -8,7 +8,7 @@ websites = {
     "Bhaskar Krishnamachari": "https://ceng.usc.edu/~bkrishna/",
     "Eugenio Grippo": "https://www.linkedin.com/in/eugenio-grippo-2574a31bb/",
     "Gunjan Verma": "https://ieeexplore.ieee.org/author/37886514800",
-    
+
     "Tzanis Anevlavis": "https://sites.google.com/a/g.ucla.edu/tzanis/",
     "Jonathan Bunton": "https://www.linkedin.com/in/jonathan-bunton-218a69126/",
     "Mine Dogan": "https://www.arni.ee.ucla.edu/people/mine-dogan/",
@@ -18,15 +18,44 @@ websites = {
     # "Karl Olson": "",
     "Prashant Shenoy": "https://people.cs.umass.edu/~shenoy/",
     "Paulo Tabuada": "http://www.seas.ucla.edu/~tabuada/",
-    
+
     "Mehrdad Kiamari": "https://www.linkedin.com/in/mehrdad-kiamari-266b55132",
     "Lillian Clark": "https://lillyclark.github.io/",
     "Daniel D'Souza": "https://www.linkedin.com/in/daniel-d-souza-5802b4118",
 
     "Lorand Cheng": "https://www.linkedin.com/in/lorand-cheng/",
+
+    "Hugo Embrechts": "https://www.linkedin.com/in/hugo-embrechts-443892",
+    "Sulyab Thottungal Valapu": "https://sulyabtv.github.io/",
+    "Tamoghna Sarkar": "https://tamoghna-sarkar.github.io/",
+    "Anusha Avyukt": "https://anusha.rbind.io/",
+    "Dimitri Torfs": "https://www.linkedin.com/in/dimitri-torfs-8a210a17/",
+    "Michele Minelli": "https://micheleminelli.com/",
 }
 
 pubs = [
+    {
+        "title": "DARSAN: A Decentralized Review System Suitable for NFT Marketplaces",
+        "venue": "ICBC 2023 - International Conference on Blockchain",
+        "authors": [
+            "Sulyab Thottungal Valapu",
+            "Tamoghna Sarkar",
+            "Jared Coleman",
+            "Anusha Avyukt",
+            "Hugo Embrechts",
+            "Dimitri Torfs",
+            "Michele Minelli",
+            "Bhaskar Krishnamachari"
+        ],
+        "links": {
+            "pdf": "https://arxiv.org/pdf/2307.15768.pdf",
+            "github": "",
+            # "linkedin": ""
+        },
+        "abstract": (
+            "We introduce DARSAN, a decentralized review system designed for Non-Fungible Token (NFT) marketplaces, to address the challenge of verifying the quality of highly resalable products with few verified buyers by incentivizing unbiased reviews. DARSAN works by iteratively selecting a group of reviewers (called ``experts'') who are likely to both accurately predict the objective popularity and assess some subjective quality of the assets uniquely associated with NFTs. The system consists of a two-phased review process: a ``pre-listing'' phase where only experts can review the product, and a ``pre-sale'' phase where any reviewer on the system can review the product. Upon completion of the sale, DARSAN distributes incentives to the participants and selects the next generation of experts based on the performance of both experts and non-expert reviewers. We evaluate DARSAN through simulation and show that, once bootstrapped with an initial set of appropriately chosen experts, DARSAN favors honest reviewers and improves the quality of the expert pool over time without any external intervention even in the presence of potentially malicious participants."
+        )
+    },
     {
         "title": "Search and Rescue on the Line",
         "venue": "SIROCCO 2023 - 30th International Colloquium on Structural Information and Communication Complexity",
@@ -164,7 +193,7 @@ pubs = [
         "abstract": (
             "Inspired by robotic applications, we study the problem of sorting a set of items over a physical domain with mobile agents. Given m mobile robots and a grid where each cell contains a single element, the objective is to design algorithms that allow robots to cooperatively sort the elements over the grid in the minimum time. We assume a synchronous model where robots do not communicate, can carry up to c elements, and can move between adjacent cells in one unit of time (grab and release time is negligible). First, we show that any algorithm requires at least \\Omega\\left(\\frac{n^2}{mc}\\right)units of time to sort an n-element line (an n \\times 1) and present an algorithm that sorts the elements in O \\left(\\frac{n^2}{mc}\\right) time. Then, we show that any n \\times 1-grid requires at least \\Omega \\left( \\frac{n^3}{mc} \\right) time and present an algorithm that completes in O\\left(\\frac{n^3 \\log n}{mc}\\right) time. Our algorithms have an equivalent competitive ratio to Shear Sort [Isaacd et al., Proc ICPP 1986] with only m=n agents (compared to the n^2 processors required by Shear Sort). Finally, we present experimental results that show the capacity has very little impact on the overall runtime and that a simplification of the algorithm leads to better results."
         )
-    },  
+    },
     {
         "title": "Message Delivery in the Plane by Robots with Different Speeds",
         "venue": "SSS 2021 - 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems",

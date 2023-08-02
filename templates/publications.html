@@ -11,23 +11,36 @@
         </div>
         <div class="row">
             <div class="col">
-                <div id="pub-accordion">
+                <div class="accordion" id="pub-accordion">
                     {% for pub in publications %}
-                        <div class="card">
-                            <div class="card-header" id="heading-{{ loop.index }}" style="cursor: pointer;" data-toggle="collapse" data-target="#collapse-{{ loop.index }}" aria-expanded="true" aria-controls="collapse-{{ loop.index }}">
-                                <b>{{ pub.title }}</b>
-                                <br />
-                                {{ pub.venue }}
-                                <br />
-                                <em>
-                                    {% for author in pub.authors %}
-                                        {{ author }}{% if not loop.last %}, {% endif %}
-                                    {% endfor %}
-                                </em>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed" 
+                                        type="button"
+                                        id="heading-{{ loop.index }}"  
+                                        data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse-{{ loop.index }}" 
+                                        aria-expanded="true" 
+                                        aria-controls="collapse-{{ loop.index }}">
+                                    <div class="row">
+                                        <div class="col">
+                                            
+                                            <b>{{ pub.title }}</b>
+                                            <br />
+                                            {{ pub.venue }}
+                                            <br />
+                                            <em>
+                                                {% for author in pub.authors %}
+                                                    {{ author }}{% if not loop.last %}, {% endif %}
+                                                {% endfor %}
+                                            </em>
+                                        </div>
+                                    </div>
+                                </button>
                             </div>
 
-                            <div id="collapse-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" aria-labelledby="heading-{{ loop.index }}" data-parent="#pub-accordion">
-                                <div class="card-body">
+                            <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ loop.index }}" data-parent="#pub-accordion">
+                                <div class="accordion-body">
                                     <div class="row">
                                         <div class="col-md-10">
                                             <h3>Abstract</h3>
@@ -67,6 +80,7 @@
                                             {% endfor %}
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
