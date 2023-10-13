@@ -43,11 +43,13 @@
                                 <div class="accordion-body">
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <h3>Abstract</h3>
-                                            <p>{{ pub.abstract }}</p>
+                                            <h4>{{ pub.title }}</h4>
+                                            <h6 class="text-muted"><em>{{ pub.venue }}</em></h6>
+                                            <h5>Abstract</h5>
+                                            <p>{{ pub.abstract | safe }}</p>
                                         </div>
                                         <div class="col-md-2">
-                                            <h3>Links</h3>
+                                            <!-- <h4>Links</h4> -->
                                             {% if pub.links.pdf %}
                                                 <a href="{{ pub.links.pdf }}" target="_blank" class="nav-link link-icon">
                                                     <i class="fa-solid fa-lg fa-file-pdf"></i>
@@ -68,7 +70,7 @@
                                                     <i class="fab fa-lg fa-linkedin"></i>
                                                 </a>
                                             {% endif %}
-                                            <h3 class="mt-2">Authors</h3>
+                                            <h4 class="mt-2">Authors</h4>
                                             {% for author in pub.authors %}
                                                 <!-- if author in websites -->
                                                 {% if author in websites %}

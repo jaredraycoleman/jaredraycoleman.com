@@ -1,0 +1,27 @@
+{% extends "projects/project.html" %}
+
+{% block title %}GCN-Turtlebot{% endblock %}
+
+{% block links %}
+<a href="https://github.com/ANRGUSC/gcnschedule-turtlenet" target="_blank" class="nav-link link-icon">
+    <i class="fab fa-lg fa-github"></i>
+</a>
+<a href="https://www.youtube.com/watch?v=Lh5Tt8tOiDY" target="_blank" class="nav-link link-icon">
+    <i class="fab fa-lg fa-youtube"></i>
+</a>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:6932363615966572546/" target="_blank" class="nav-link link-icon">
+    <i class="fab fa-lg fa-linkedin"></i>
+</a>
+{% endblock %}
+
+{% block description %}
+<p>
+    <em>
+        GCN-based Scheduler for Distributing Computation in the Internet of Robotic Things
+    </em>
+</p>
+<p>
+    This project explores how graph convolutional neural networks can be trained to immitate well-known task-graph scheduling algorithms for fast re-scheduling over networks with highly dynamic communication links. First-place winner of 
+    <a href='https://smile-sdsu.github.io/cps_iot22/'>The 2nd Student Design Competition on Networked Computing on the Edge</a> at <a href='https://cpsiotweek.neslab.it/'>CPS IoT Week 2022</a>.
+</p>
+{% endblock %}
