@@ -18,6 +18,9 @@ websites = {
     # "Karl Olson": "",
     "Prashant Shenoy": "https://people.cs.umass.edu/~shenoy/",
     "Paulo Tabuada": "http://www.seas.ucla.edu/~tabuada/",
+    "Osama A Hanna": "https://www.arni.ee.ucla.edu/people/osama-hanna/",
+    "Merve Karakas": "https://www.arni.ee.ucla.edu/people/merve-karakas/",
+    "Xinlin Li": "https://www.arni.ee.ucla.edu/people/xinlin-li/",
 
     "Mehrdad Kiamari": "https://www.linkedin.com/in/mehrdad-kiamari-266b55132",
     "Lillian Clark": "https://lillyclark.github.io/",
@@ -34,6 +37,28 @@ websites = {
 }
 
 pubs = [
+    {
+        "title": "Online Allocation of Sensing and Computation in Large Graphs",
+        "venue": "IEEE CIC 2023 - International Conference on Collaboration and Internet Computing",
+        "authors": [
+            "Xinlin Li",
+            "Merve Karakas",
+            "Osama A Hanna",
+            "Mehrdad Kiamari",
+            "Jared Coleman",
+            "Christina Fragouli",
+            "Bhaskar Krishnamachari",
+            "Gunjan Verma",
+        ],
+        "links": {
+            "pdf": "https://ieeexplore.ieee.org/document/10429929",
+            "github": "",
+            # "linkedin": ""
+        },
+        "abstract": (
+            "We consider vehicle tracking over a large territory equipped with sensors and computational units, and propose online resource allocation algorithms that decide which sensor nodes to activate, and on which computational units to perform the corresponding tracking tasks. We show through numerical evaluation that our approach can notably outperform state of art algorithms in terms of delay, communication cost, and the number of required sensor measurements."
+        )
+    },
     {
         "title": "DARSAN: A Decentralized Review System Suitable for NFT Marketplaces",
         "venue": "ICBC 2023 - International Conference on Blockchain",
