@@ -234,7 +234,20 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+                // Get the target element
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                // Calculate the top offset of the target element
+                const targetPosition = target.getBoundingClientRect().top;
+                // Adjust for the navbar height and any additional spacing you want
+                // Replace 'navbarHeight' with the actual height of your navbar
+                const navbarHeight = document.querySelector('.sticky-top').offsetHeight;
+                const offsetPosition = targetPosition + window.pageYOffset - navbarHeight;
+
+                // Scroll to the target element with the offset
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             });
