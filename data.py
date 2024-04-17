@@ -1,7 +1,7 @@
 websites = {
     "Jared Coleman": "https://jaredraycoleman.com",
     "Evangelos Kranakis": "http://people.scs.carleton.ca/~kranakis/",
-    "Oscar Morales-Ponce": "http://web.csulb.edu/~omorales/",
+    "Oscar Morales-Ponce": "https://www.csulb.edu/college-of-engineering/dr-oscar-morales-ponce",
     "Jorge Urrutia": "https://www.matem.unam.mx/~urrutia/",
     "Birgit Vogtenhuber": "http://www.ist.tugraz.at/staff/vogtenhuber/",
     "Danny Krizanc": "https://dkrizanc.web.wesleyan.edu/",
@@ -9,7 +9,7 @@ websites = {
     "Eugenio Grippo": "https://www.linkedin.com/in/eugenio-grippo-2574a31bb/",
     "Gunjan Verma": "https://ieeexplore.ieee.org/author/37886514800",
 
-    "Tzanis Anevlavis": "https://sites.google.com/a/g.ucla.edu/tzanis/",
+    "Tzanis Anevlavis": "https://www.linkedin.com/in/tzanis-anevlavis/",
     "Jonathan Bunton": "https://www.linkedin.com/in/jonathan-bunton-218a69126/",
     "Mine Dogan": "https://www.arni.ee.ucla.edu/people/mine-dogan/",
     # "Abel Souza": "",
@@ -37,6 +37,23 @@ websites = {
 }
 
 pubs = [
+    {
+        "title": "Linear Search for an Escaping Target with Unknown Speed",
+        "venue": "IWOCA 2024 - 35th International Workshop on Combinatorial Algorithms",
+        "authors": [
+            "Jared Coleman",
+            "Dmitry Ivanov",
+            "Evangelos Kranakis",
+            "Danny Krizanc",
+            "Oscar Morales-Ponce"
+        ],
+        "links": {
+            # "pdf": "",
+        },
+        "abstract": (
+            "We consider linear search for an escaping target whose speed and initial position are unknown to the searcher. A searcher (an autonomous mobile agent) is initially placed at the origin of the real line and can move with maximum speed $1$ in either direction along the line. An oblivious mobile target that is moving away from the origin with an unknown constant speed $v<1$ is initially placed by an adversary on the infinite line at distance $d$ from the origin in an unknown direction. We consider two cases, depending on whether $d$ is known or unknown. The main contribution of this paper is to prove a new lower bound and give algorithms leading to new upper bounds for search in these settings. This results in an optimal (up to lower order terms in the exponent) competitive ratio in the case where $d$ is known and improved upper and lower bounds for the case where $d$ is unknown. Our results solve an open problem proposed in [Coleman et al., Proc. OPODIS 2022]"
+        )
+    },
     {
         "title": "Online Allocation of Sensing and Computation in Large Graphs",
         "venue": "IEEE CIC 2023 - International Conference on Collaboration and Internet Computing",
