@@ -34,9 +34,29 @@ websites = {
     "Anusha Avyukt": "https://anusha.rbind.io/",
     "Dimitri Torfs": "https://www.linkedin.com/in/dimitri-torfs-8a210a17/",
     "Michele Minelli": "https://micheleminelli.com/",
+
+    "Ruben Rosales": "https://www.linkedin.com/in/ruben-rosales-99575b9b/",
+    "Khalil Iskarous": "https://dornsife.usc.edu/profile/khalil-iskarous/",
 }
 
 pubs = [
+    {
+        "title": "LLM-Assisted Rule Based Machine Translation for Low/No-Resource Languages",
+        "venue": "AmericasNLP @ NAACL 2024 - 4th Workshop on NLP for Indigenous Languages of the Americas",
+        "authors": [
+            "Jared Coleman",
+            "Bhaskar Krishnamachari",
+            "Khalil Iskarous",
+            "Ruben Rosales",
+        ],
+        "links": {
+            "pdf": "https://arxiv.org/pdf/2405.08997",
+            "github": "https://github.com/kubishi/kubishi_sentences",
+        },
+        "abstract": (
+            "We propose a new paradigm for machine translation that is particularly useful for no-resource languages (those without any publicly available bilingual or monolingual corpora): LLM-RBMT (LLM-Assisted Rule Based Machine Translation). Using the LLM-RBMT paradigm, we design the first language education/revitalization-oriented machine translator for Owens Valley Paiute (OVP), a critically endangered Indigenous American language for which there is virtually no publicly available data. We present a detailed evaluation of the translator's components: a rule-based sentence builder, an OVP to English translator, and an English to OVP translator. We also discuss the potential of the paradigm, its limitations, and the many avenues for future research that it opens up."
+        )
+    },
     {
         "title": "Linear Search for an Escaping Target with Unknown Speed",
         "venue": "IWOCA 2024 - 35th International Workshop on Combinatorial Algorithms",
@@ -48,7 +68,7 @@ pubs = [
             "Oscar Morales-Ponce"
         ],
         "links": {
-            # "pdf": "",
+            "pdf": "https://arxiv.org/abs/2404.14300",
         },
         "abstract": (
             "We consider linear search for an escaping target whose speed and initial position are unknown to the searcher. A searcher (an autonomous mobile agent) is initially placed at the origin of the real line and can move with maximum speed $1$ in either direction along the line. An oblivious mobile target that is moving away from the origin with an unknown constant speed $v<1$ is initially placed by an adversary on the infinite line at distance $d$ from the origin in an unknown direction. We consider two cases, depending on whether $d$ is known or unknown. The main contribution of this paper is to prove a new lower bound and give algorithms leading to new upper bounds for search in these settings. This results in an optimal (up to lower order terms in the exponent) competitive ratio in the case where $d$ is known and improved upper and lower bounds for the case where $d$ is unknown. Our results solve an open problem proposed in [Coleman et al., Proc. OPODIS 2022]"
