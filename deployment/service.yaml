@@ -30,7 +30,7 @@ spec:
             - name: FLASK_ENV
               value: "production"
             - name: DEPLOY_ID # for reasy re-deployment
-              value: DEPLOYID-4c4e2bdd48320b986b668a9c5c936b8b
+              value: DEPLOYID-cf256a96de3506ba8e8d4ccc82ad6869
             - name: SECRET_KEY
               valueFrom:
                 secretKeyRef:
