@@ -41,6 +41,21 @@ websites = {
 
 pubs = [
     {
+        "title": "PISA: An Adversarial Approach To Comparing Task Graph Scheduling Algorithms",
+        "venue": "To Appear at IPDPS 2025 - The 39th International Parallel and Distributed Processing Symposium",
+        "authors": [
+            "Jared Coleman",
+            "Bhaskar Krishnamachari",
+        ],
+        "links": {
+            "pdf": "https://arxiv.org/pdf/2403.07120",
+            "github": "https://github.com/anrgusc/saga",
+        },
+        "abstract": (
+            "Scheduling a task graph representing an application over a heterogeneous network of computers is a fundamental problem in distributed computing. It is known to be not only NP-hard but also not polynomial-time approximable within a constant factor. As a result, many heuristic algorithms have been proposed over the past few decades. Yet it remains largely unclear how these algorithms compare to each other in terms of the quality of schedules they produce. We identify gaps in the traditional benchmarking approach to comparing task scheduling algorithms and propose a simulated annealing-based adversarial analysis approach called PISA to address them. We also introduce SAGA, a new open-source library for comparing task scheduling algorithms. We use SAGA to benchmark 15 algorithms on 16 datasets and PISA to compare the algorithms in a pairwise manner. Algorithms that appear to perform similarly on benchmarking datasets are shown to perform very differently on adversarially chosen problem instances. Interestingly, the results indicate that this is true even when the adversarial search is constrained to selecting among well-structured, application-specific problem instances. We present the first known lower bounds on the performance of many of the algorithms considered in this paper compared to other popular scheduling algorithms. This work represents an important step towards a more general understanding of the performance boundaries between task scheduling algorithms on different families of problem instances."
+        )
+    },
+    {
         "title": "LLM-Assisted Rule Based Machine Translation for Low/No-Resource Languages",
         "venue": "AmericasNLP @ NAACL 2024 - 4th Workshop on NLP for Indigenous Languages of the Americas",
         "authors": [

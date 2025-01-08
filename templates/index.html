@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" id="navbarBrand" onclick="scrollToTop(event)">Jared Coleman</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,13 +65,28 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    
+    <!-- Add note to visit research.kubishi.com to see publications, projects, and other news -->
+    <div class="container mt-1 mt-sm-3 mt-md-4">
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading text-center">
+                For publications, projects, and other research news, visit my research group website at <a href="https://research.kubishi.com" target="_blank" title="Open in new tab">research.kubishi.com</a>
+            </h4>
+            <!-- <p>
+                This site is a personal site and may not be up-to-date with the latest research and projects.
+            </p> -->
+        </div>
+    </div>
     
     <div class="main-content">
-        <div class="container">
+        <div class="container mt-3">
             <div class="row">
                 <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
-                    <img src="{{ url_for('static', filename='img/profile_square.jpg') }}" alt="Profile Picture" class="img-fluid profile-img" style="width: 100%; max-width: 400px" />
+                    <img src="{{ url_for('static', filename='img/profile_square.jpg') }}" 
+                         alt="Profile Picture" 
+                         class="img-fluid profile-img" 
+                         style="width: 100%; max-width: 400px; border-radius: 5%;">
                 </div>
                 <div class="col-lg-8 mt-2">
                     <h1>Jared Coleman</h1>
@@ -109,121 +124,6 @@
                         which is critically endangered and which I am one of many in my community working 
                         to learn and revitalize.
                     </p>
-                </div>
-            </div>
-                
-            <div class="row mt-4" id="publications">
-                <div class="col">
-                    <h1>Publications</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="accordion-flush" id="pub-accordion">
-                        {% for pub in publications %}
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <button class="accordion-button collapsed" 
-                                            type="button"
-                                            id="heading-{{ loop.index }}"  
-                                            data-bs-toggle="collapse" 
-                                            data-bs-target="#collapse-{{ loop.index }}" 
-                                            aria-expanded="true" 
-                                            aria-controls="collapse-{{ loop.index }}">
-                                        <div class="row">
-                                            <div class="col">
-                                                
-                                                <b>{{ pub.title }}</b>
-                                                <br />
-                                                {{ pub.venue }}
-                                                <br />
-                                                <em>
-                                                    {% for author in pub.authors %}
-                                                        {{ author }}{% if not loop.last %}, {% endif %}
-                                                    {% endfor %}
-                                                </em>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </div>
-    
-                                <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ loop.index }}" data-parent="#pub-accordion">
-                                    <div class="accordion-body">
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <h4>{{ pub.title }}</h4>
-                                                <h6 class="text-muted"><em>{{ pub.venue }}</em></h6>
-                                                <h5>Abstract</h5>
-                                                <p>{{ pub.abstract | safe }}</p>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <!-- <h4>Links</h4> -->
-                                                {% if pub.links.pdf %}
-                                                    <a href="{{ pub.links.pdf }}" target="_blank" class="nav-link link-icon">
-                                                        <i class="fa-solid fa-lg fa-file-pdf"></i>
-                                                    </a>
-                                                {% endif %}
-                                                {% if pub.links.github %}
-                                                    <a href="{{ pub.links.github }}" target="_blank" class="nav-link link-icon">
-                                                        <i class="fab fa-lg fa-github"></i>
-                                                    </a>
-                                                {% endif %}
-                                                {% if pub.links.youtube %}
-                                                    <a href="{{ pub.links.youtube }}" target="_blank" class="nav-link link-icon">
-                                                        <i class="fab fa-lg fa-youtube"></i>
-                                                    </a>
-                                                {% endif %}
-                                                {% if pub.links.linkedin %}
-                                                    <a href="{{ pub.links.linkedin }}" target="_blank" class="nav-link link-icon">
-                                                        <i class="fab fa-lg fa-linkedin"></i>
-                                                    </a>
-                                                {% endif %}
-                                                <h4 class="mt-2">Authors</h4>
-                                                {% for author in pub.authors %}
-                                                    <!-- if author in websites -->
-                                                    {% if author in websites %}
-                                                        <a href="{{ websites[author] }}" target="_blank">{{ author }}</a>
-                                                    {% else %}
-                                                        {{ author }}
-                                                    {% endif %}
-                                                    <br />
-                                                {% endfor %}
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        
-            <div class="row mt-4" id="projects">
-                <div class="col">
-                    <h1>Projects</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <ul class="list-group-flush ps-0 ms-0" id="pub-list">
-                        <li class="list-group-item">
-                            {% include "projects/chatlang.html" %}
-                        </li>
-                        <li class="list-group-item">
-                            {% include "projects/sentences-kubishi.html" %}
-                        </li>
-                        <li class="list-group-item">
-                            {% include "projects/gcn-turtlebot.html" %}
-                        </li>
-                        <li class="list-group-item">
-                            {% include "projects/tendermint.html" %}
-                        </li>
-                        <li class="list-group-item">
-                            {% include "projects/kubishi.html" %}
-                        </li>
-    
-                    </ul>
                 </div>
             </div>
         </div>
