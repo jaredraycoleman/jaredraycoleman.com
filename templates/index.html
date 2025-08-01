@@ -1,216 +1,66 @@
-<!--layout.html-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDEH16CJVJ"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+{% extends "base.html" %}
 
-    gtag('config', 'G-GDEH16CJVJ');
-    </script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="description" content="Jared Coleman">
+{% block title %}Jared Coleman{% endblock %}
 
-    <title>Jared Coleman</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.ico') }}">
-    <script>
-        MathJax = {
-          loader: {load: ['[tex]/textmacros']},
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-          }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-</head>
-<body>
-    <!-- toast for email copy -->
-    <!-- place at bottom left + navbar height -->
-    <div class="position-fixed p-3" style="bottom: 5rem; left: 1rem; z-index: 1050">
-        <div id="email-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <!-- <img src="..." class="rounded me-2" alt="..."> -->
-                <strong class="me-auto">Email Copied</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <!--  -->
-            <div class="toast-body" id="email message" style="background-color: whitesmoke !important;"></div>
-        </div>
+{% block navbar_links %}
+    <li class="nav-item">
+        <a class="nav-link" href="#research">Research</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading text-center">
+        For publications, projects, and other research news, visit my research group website at 
+        <a href="https://research.kubishi.com" target="_blank" title="Open in new tab">research.kubishi.com</a>
+    </h4>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+        <img src="{{ url_for('static', filename='img/profile_square.jpg') }}" 
+             alt="Profile Picture" 
+             class="img-fluid profile-img" 
+             style="width: 100%; max-width: 400px; border-radius: 5%;">
     </div>
+    <div class="col-lg-8 mt-2">
+        <h1>Jared Coleman</h1>
+        <p>
+            Assistant Professor of Computer Science @ Loyola Marymount University<br />
+            Kubishi Research Group 
+            <a href="https://research.kubishi.com" target="_blank" title="Open in new tab">
+                <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+        </p>
+        <hr />
+        <p>
+            Ph.D. in Computer Science @ University of Southern California<br />
+            Autonomous Networks Research Group 
+            <a href="https://anrg.usc.edu" target="_blank" title="Open in new tab">
+                <i class="fas fa-external-link-alt fa-sm"></i>
+            </a><br />
+            B.S. & M.S. in Computer Science @ California State University Long Beach<br />
+            Formerly MTS @ Aerospace Corporation
+        </p>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="navbarBrand" onclick="scrollToTop(event)">Jared Coleman</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#publications">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-    
-    <!-- Add note to visit research.kubishi.com to see publications, projects, and other news -->
-    <div class="container mt-1 mt-sm-3 mt-md-4">
-        <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading text-center">
-                For publications, projects, and other research news, visit my research group website at <a href="https://research.kubishi.com" target="_blank" title="Open in new tab">research.kubishi.com</a>
-            </h4>
-            <!-- <p>
-                This site is a personal site and may not be up-to-date with the latest research and projects.
-            </p> -->
-        </div>
+        <h4 id="research">Research Interests</h4>
+        <p>
+            Cooperative multi-agent systems, distributed computing, decentralized computing, 
+            online algorithms, distributed ledger technology, internet of things (IoT), 
+            artificial intelligence (AI), large language models (LLMs), and language revitalization.
+        </p>
+
+        <h4 id="about">About Me</h4>
+        <p>
+            I am a proud member of the Big Pine Paiute Tribe of the Owens Valley.
+            Besides computer science, I enjoy board games, hiking, and language.
+            I'm especially interested in my tribe's native language, Owens Valley Paiute, 
+            which is critically endangered and which I am one of many in my community working 
+            to learn and revitalize.
+        </p>
     </div>
-    
-    <div class="main-content">
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
-                    <img src="{{ url_for('static', filename='img/profile_square.jpg') }}" 
-                         alt="Profile Picture" 
-                         class="img-fluid profile-img" 
-                         style="width: 100%; max-width: 400px; border-radius: 5%;">
-                </div>
-                <div class="col-lg-8 mt-2">
-                    <h1>Jared Coleman</h1>
-                    <p>
-                        Assistant Professor of Computer Science @ Loyola Marymount University
-                        <br />
-                        Kubishi Research Group  
-                        <a href="https://research.kubishi.com" target="_blank" title="Open in new tab"><i class="fas fa-external-link-alt fa-sm"></i></a>
-                        <hr />
-                        <!-- <br /> -->
-                        Ph.D. in Computer Science @ University of Southern California, 
-                        Autonomous Networks Research Group  
-                        <a href="https://anrg.usc.edu" target="_blank" title="Open in new tab"><i class="fas fa-external-link-alt fa-sm"></i></a>
-                        <br />
-                        B.S. & M.S. in Computer Science @ California State University Long Beach
-                        <br />
-                        Formerly MTS @ Aerospace Corporation
-                        <!-- <br />
-                        Formerly MTS @ Aerospace Corporation
-                        <a href="https://aerospace.org" target="_blank" title="Open in new tab"><i class="fas fa-external-link-alt"></i></a> -->
-                    </p>
-                    <h4>Research Interests</h4>
-                    <p>
-                        Cooperative multi-agent systems, distributed computing,
-                        decentralized computing, online algorithms,
-                        distributed ledger technology, internet of things (IoT),
-                        artificial intelligence (AI), large language models (LLMs),
-                        and language revitalization.
-                    </p>
-                    <h4>About Me</h4>
-                    <p>
-                        I am a proud member of the Big Pine Paiute Tribe of the Owens Valley.
-                        Besides computer science, I enjoy board games, hiking, and language.
-                        I'm especially interested in my tribe's native language, Owens Valley Paiute, 
-                        which is critically endangered and which I am one of many in my community working 
-                        to learn and revitalize.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <footer class="footer navbar fixed-bottom navbar-expand navbar-light bg-light">
-        <div class="container-fluid">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/jaredraycoleman/cv/raw/master/cv.pdf">CV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="email-link" href="#">Contact</a>
-                </li>
-            </ul>
-            <div class="d-flex">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="https://bsky.app/profile/jared.kubishi.com" class="nav-link"><i class="fab fa-bluesky custom-icon-size"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://github.com/jaredraycoleman" class="nav-link"><i class="fab fa-github custom-icon-size"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://linkedin.com/in/jaredraycoleman" class="nav-link"><i class="fab fa-linkedin-in custom-icon-size"></i></a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a href="https://facebook.com/100089979201152" class="nav-link"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://instagram.com/jared_coleman" class="nav-link"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://twitter.com/jaredraycoleman" class="nav-link"><i class="fab fa-twitter"></i></a>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                // Get the target element
-                const target = document.querySelector(this.getAttribute('href'));
-                
-                // Calculate the top offset of the target element
-                const targetPosition = target.getBoundingClientRect().top;
-                // Adjust for the navbar height and any additional spacing you want
-                // Replace 'navbarHeight' with the actual height of your navbar
-                const navbarHeight = document.querySelector('.sticky-top').offsetHeight;
-                const offsetPosition = targetPosition + window.pageYOffset - navbarHeight;
-
-                // Scroll to the target element with the offset
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        function scrollToTop(event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Smooth scroll
-            });
-        }
-
-        // email obfuscation
-        document.getElementById('email-link').addEventListener('click', function() {
-            fetch('/get-email')
-                .then(response => response.json())
-                .then(data => {
-                    var myEmail = data.user + '@' + data.domain;
-                    navigator.clipboard.writeText(myEmail);
-                    var emailToast = new bootstrap.Toast(document.getElementById('email-toast'));
-                    emailToast.show();
-                    var message = `My email (${myEmail}) has been copied to your clipboard. Paste in your email client to send me a message.`;
-                    document.getElementById('email message').innerHTML = message;
-
-                });
-        });
-    </script>
-</body>
-</html>
+</div>
+{% endblock %}

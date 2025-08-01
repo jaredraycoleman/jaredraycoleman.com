@@ -41,6 +41,24 @@ websites = {
 
 pubs = [
     {
+        "title": "Multimodal Search on a Line",
+        "venue": "SIROCCO 2025 - 32nd International Colloquium on Structural Information and Communication Complexity",
+        "authors": [
+            "Jared Coleman",
+            "Dmitry Ivanov",
+            "Evangelos Kranakis",
+            "Danny Krizanc",
+            "Oscar Morales-Ponce"
+        ],
+        "links": {
+            # "pdf": "https://arxiv.org/pdf/2403.07120",
+            # "github": "https://github.com/anrgusc/saga",
+        },
+        "abstract": (
+            r"Inspired by the diverse set of technologies used in underground object detection and imaging, we introduce a novel multimodal linear search problem whereby a single searcher starts at the origin and must find a target that can only be detected when the searcher moves through its location using the correct of $p$ possible search modes. The target's location, its distance $d$ from the origin, and the correct search mode are all initially unknown to the searcher. We prove tight upper and lower bounds on the competitive ratio for this problem. Specifically, we show that when $p$ is odd, the optimal competitive ratio is given by $2p+3+\sqrt{8(p+1)}$, whereas when $p$ is even, the optimal competitive ratio is given by $c$: the unique solution to $(c-1)^4-4p(c+1)^2(c-p-1)=0$ in the interval $\left[2p+1+\sqrt{8p},\infty\right)$. This solution $c$ has the explicit bounds $2p+3+\sqrt{8(p-1)}\leq c\leq 2p+3+\sqrt{8p}$. The optimal algorithms we propose require the searcher to move infinitesimal distances and change directions infinitely many times within finite intervals. To better suit practical applications, we also propose an approximation algorithm with a competitive ratio of $c+\varepsilon$ (where $c$ is the optimal competitive ratio and $\varepsilon > 0$ is an arbitrarily small constant). This algorithm involves the searcher moving finite distances and changing directions a finite number of times within any finite interval."
+        )
+    },
+    {
         "title": "PISA: An Adversarial Approach To Comparing Task Graph Scheduling Algorithms",
         "venue": "To Appear at IPDPS 2025 - The 39th International Parallel and Distributed Processing Symposium",
         "authors": [
