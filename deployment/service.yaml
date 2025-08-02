@@ -29,8 +29,8 @@ spec:
           env:
             - name: FLASK_ENV
               value: "production"
-            - name: DEPLOY_ID # for reasy re-deployment
-              value: DEPLOYID-7745eee467618da0753dbb3724252f76
+            - name: DEPLOY_ID
+              value: DEPLOYID-6e5e78fcddf9203a09f8f307d2cc64dd
             - name: SECRET_KEY
               valueFrom:
                 secretKeyRef:
@@ -101,4 +101,3 @@ spec:
     - secretName: jared-kubishi-service-cert-jrayc
       hosts:
         - jrayc.com
-

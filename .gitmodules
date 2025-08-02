@@ -1,0 +1,3 @@
+[submodule "study_break"]
+	path = study_break
+	url = https://github.com/jaredraycoleman/study_break.git

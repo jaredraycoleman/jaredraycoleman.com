@@ -1,10 +1,10 @@
 from functools import lru_cache
 import math
+import os
 import re
 from typing import Dict, List, Optional
 import obsidiantools.api as otools
 import pathlib
-import pydantic
 import dotenv
 
 from bar import Ingredient, Cocktail, BarData
@@ -13,14 +13,12 @@ from bar import Ingredient, Cocktail, BarData
 dotenv.load_dotenv()
 
 thisdir = pathlib.Path(__file__).parent.resolve()
-obsidiandir = pathlib.Path("/mnt/c/Users/jared/Documents/Obsidian/Personal Notes")
-bardir = obsidiandir / "Personal/Bar"
+bardir = thisdir / "study_break"
 ingredientsdir = bardir / "Ingredients"
 cocktailsdir = bardir / "Cocktails"
 
-vault = otools.Vault(obsidiandir).connect().gather()
+vault = otools.Vault(bardir).connect().gather()
 metadata = vault.get_all_file_metadata() # Pandas DataFrame
-
 
 
 wikilink_pattern = re.compile(r"\[\[(?:.*?/)?([^|\]]+)(?:\|([^\]]+))?\]\]")
@@ -92,10 +90,12 @@ def load_cocktails() -> Dict[str, Cocktail]:
         cocktails[name] = load_cocktail(name)
     return cocktails
 
-def main():
+def build_bar():
     cocktails = load_cocktails()
+    print(f"Loaded {len(cocktails)} cocktails.")
     bar_data = BarData(cocktails=cocktails)
+    print(f"Bar data loaded with {len(bar_data.ingredients)} unique ingredients.")
     bar_data.save()
 
 if __name__ == "__main__":
-    main()
+    build_bar()

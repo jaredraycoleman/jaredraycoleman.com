@@ -1,3 +1,4 @@
+import os
 from typing import Dict, List, Optional
 import pathlib
 import pydantic
@@ -7,7 +8,7 @@ import dotenv
 dotenv.load_dotenv()
 
 thisdir = pathlib.Path(__file__).parent.resolve()
-savepath = thisdir / "static" / "data" / "bar.json"
+SAVEPATH = thisdir / "static" / "data" / "bar.json"
 
 class Ingredient(pydantic.BaseModel):
     name: str
@@ -37,14 +38,14 @@ class BarData(pydantic.BaseModel):
     
     def save(self):
         """Saves the bar data to a JSON file."""
-        savepath.parent.mkdir(parents=True, exist_ok=True)
-        savepath.write_text(self.model_dump_json(indent=2), encoding='utf-8')
+        SAVEPATH.parent.mkdir(parents=True, exist_ok=True)
+        SAVEPATH.write_text(self.model_dump_json(indent=2), encoding='utf-8')
     
     @classmethod
     def load(cls) -> 'BarData':
         """Loads the bar data from a JSON file."""
-        if not savepath.exists():
+        if not SAVEPATH.exists():
             return cls(cocktails={})
-        return cls.model_validate_json(savepath.read_text(encoding='utf-8'))
+        return cls.model_validate_json(SAVEPATH.read_text(encoding='utf-8'))
 
 
