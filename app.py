@@ -45,6 +45,8 @@ def clone_or_get_repo():
 
 # Clone repo on startup
 REPO = clone_or_get_repo()
+# Build bar data
+build_bar()
 
 # --- Web routes ---
 @app.route('/')
@@ -88,6 +90,7 @@ def studybreak():
 # --- GitHub webhook ---
 @app.route('/api/studybreak-webhook', methods=['POST'])
 def studybreak_webhook():
+    logger.info("[webhook] Received webhook request")
     if STUDY_BREAK_SECRET:
         signature = request.headers.get("X-Hub-Signature-256")
         if not signature:

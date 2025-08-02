@@ -1,8 +1,6 @@
 from functools import lru_cache
-import math
-import os
 import re
-from typing import Dict, List, Optional
+from typing import Dict
 import obsidiantools.api as otools
 import pathlib
 import dotenv
@@ -17,10 +15,6 @@ bardir = thisdir / "study_break"
 ingredientsdir = bardir / "Ingredients"
 cocktailsdir = bardir / "Cocktails"
 
-vault = otools.Vault(bardir).connect().gather()
-metadata = vault.get_all_file_metadata() # Pandas DataFrame
-
-
 wikilink_pattern = re.compile(r"\[\[(?:.*?/)?([^|\]]+)(?:\|([^\]]+))?\]\]")
 @lru_cache(maxsize=None)
 def extract_display_name(s: str) -> str:
@@ -33,7 +27,7 @@ def extract_display_name(s: str) -> str:
     return s.strip()
 
 @lru_cache(maxsize=None)
-def load_ingredient(name: str) -> Ingredient:
+def load_ingredient(vault: otools.Vault, name: str) -> Ingredient:
     """Load an ingredient from the vault."""
     try:
         metadata = vault.get_front_matter(name)
@@ -51,7 +45,7 @@ def load_ingredient(name: str) -> Ingredient:
             description=None
         )
 
-def load_cocktail(name: str) -> Cocktail:
+def load_cocktail(vault: otools.Vault, name: str) -> Cocktail:
     """Load a cocktail from the vault."""
     metadata = vault.get_front_matter(name)
     ingredients = [
@@ -69,29 +63,30 @@ def load_cocktail(name: str) -> Cocktail:
     return Cocktail(
         name=name,
         description=metadata.get('description'),
-        ingredients=[load_ingredient(ing) for ing in ingredients],
+        ingredients=[load_ingredient(vault, ing) for ing in ingredients],
         instructions=metadata.get('instructions'),
         source_text=source_text
     )
 
-def load_ingredients() -> Dict[str, Ingredient]:
+def load_ingredients(vault: otools.Vault) -> Dict[str, Ingredient]:
     """Load all ingredients from the vault."""
     ingredients = {}
     for file in ingredientsdir.glob("*.md"):
         name = file.stem
-        ingredients[name] = load_ingredient(name)
+        ingredients[name] = load_ingredient(vault, name)
     return ingredients
 
-def load_cocktails() -> Dict[str, Cocktail]:
+def load_cocktails(vault: otools.Vault) -> Dict[str, Cocktail]:
     """Load all cocktails from the vault."""
     cocktails = {}
     for file in cocktailsdir.glob("*.md"):
         name = file.stem
-        cocktails[name] = load_cocktail(name)
+        cocktails[name] = load_cocktail(vault, name)
     return cocktails
 
 def build_bar():
-    cocktails = load_cocktails()
+    vault = otools.Vault(bardir).connect().gather()
+    cocktails = load_cocktails(vault)
     print(f"Loaded {len(cocktails)} cocktails.")
     bar_data = BarData(cocktails=cocktails)
     print(f"Bar data loaded with {len(bar_data.ingredients)} unique ingredients.")
