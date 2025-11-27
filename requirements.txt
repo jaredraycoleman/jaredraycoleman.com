@@ -1,9 +1,0 @@
-Flask==2.3.2
-gunicorn==20.1.0
-flask-talisman==1.0.0
-python-dotenv==1.1.1
-Markdown==3.8.2
-pydantic==2.11.7
-watchdog==6.0.0
-obsidiantools==0.11.0
-GitPython==3.1.45
